@@ -1,0 +1,44 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Feature File\MarsLogo\**" />
+    <Compile Remove="MarsLogo\**" />
+    <Compile Remove="Specflow\**" />
+    <EmbeddedResource Remove="Feature File\MarsLogo\**" />
+    <EmbeddedResource Remove="MarsLogo\**" />
+    <EmbeddedResource Remove="Specflow\**" />
+    <None Remove="Feature File\MarsLogo\**" />
+    <None Remove="MarsLogo\**" />
+    <None Remove="Specflow\**" />
+    <SpecFlowFeatureFiles Remove="Feature File\MarsLogo\**" />
+    <SpecFlowFeatureFiles Remove="MarsLogo\**" />
+    <SpecFlowFeatureFiles Remove="Specflow\**" />
+    <SpecFlowObsoleteCodeBehindFiles Remove="Feature File\MarsLogo\**" />
+    <SpecFlowObsoleteCodeBehindFiles Remove="MarsLogo\**" />
+    <SpecFlowObsoleteCodeBehindFiles Remove="Specflow\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.2.0" />
+    <PackageReference Include="NUnit3TestAdapter" Version="4.2.1" />
+    <PackageReference Include="Selenium.Support" Version="3.141.0" />
+    <PackageReference Include="Selenium.WebDriver" Version="3.141.0" />
+    <PackageReference Include="Selenium.WebDriver.ChromeDriver" Version="101.0.4951.4100" />
+    <PackageReference Include="SpecFlow" Version="3.9.74" />
+    <PackageReference Include="SpecFlow.NUnit" Version="3.9.74" />
+    <PackageReference Include="SpecFlow.NUnit.Runners" Version="3.9.74" />
+    <PackageReference Include="SpecFlow.Tools.MsBuild.Generation" Version="3.9.74" />
+    <PackageReference Include="WebDriver.ChromeDriver.win32" Version="101.0.4951.41" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Utilities\" />
+    <Folder Include="Tests\" />
+  </ItemGroup>
+
+</Project>

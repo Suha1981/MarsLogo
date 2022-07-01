@@ -1,9 +1,11 @@
-﻿using OpenQA.Selenium;
+﻿using NUnit.Framework;
+using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TechTalk.SpecFlow;
 
 namespace MarsLogo.POM
 {
@@ -26,13 +28,13 @@ namespace MarsLogo.POM
             driver.FindElement(By.XPath("//*[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/form/div[2]/div/div[2]/div/div/div[3]/input[1]")).Click();
         }
         [Then(@"The language details should be added successfully")]
-        public void ThenTheLanguageDetailsShouldBeAddedSuccessfully()
+        public void ThenTheLanguageDetailsShouldBeAddedSuccessfully(IWebDriver driver)
         {
             IWebElement language = driver.FindElement(By.XPath("//*[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/form/div[2]/div/div[2]/div/table/tbody/tr/td[1]"));
             Assert.True(language.Displayed);
         }
         [When(@"User filled the skills details and saved")]
-        public void WhenUserFilledTheSkillsDetailsAndSaved()
+        public void WhenUserFilledTheSkillsDetailsAndSaved(IWebDriver driver)
         {
             // Identify Skills //
             IWebElement Skills = driver.FindElement(By.XPath("//*[@id='account-profile-section']//div[3]//div[1]/a[2]"));
@@ -47,14 +49,19 @@ namespace MarsLogo.POM
 
         }
 
+        private void SelectOptionByValue(By by, string v)
+        {
+            throw new NotImplementedException();
+        }
+
         [Then(@"The skills details should be added successfully")]
-        public void ThenTheSkillsDetailsShouldBeAddedSuccessfully()
+        public void ThenTheSkillsDetailsShouldBeAddedSuccessfully(IWebDriver driver)
         {
             IWebElement skills = driver.FindElement(By.XPath("//*[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/form/div[3]/div/div[2]/div/table/tbody/tr/td[1]"));
             Assert.True(skills.Displayed);
         }
         [When(@"User filled the Description details and saved")]
-        public void WhenUserFilledTheDescriptionDetailsAndSaved()
+        public void WhenUserFilledTheDescriptionDetailsAndSaved(IWebDriver driver)
         {
             // Identify Description //
             IWebElement Description = driver.FindElement(By.XPath("//*[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/div/div/div/h3/span/i"));
@@ -69,7 +76,7 @@ namespace MarsLogo.POM
         }
 
         [Then(@"The Description details should be added successfully")]
-        public void ThenTheDescriptionDetailsShouldBeAddedSuccessfully()
+        public void ThenTheDescriptionDetailsShouldBeAddedSuccessfully(IWebDriver driver)
         {
             IWebElement Description = driver.FindElement(By.XPath("//*[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/div/div/div/span"));
             Assert.True(Description.Displayed);

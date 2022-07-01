@@ -11,8 +11,7 @@ namespace ConsoleApp1
     [Binding]
     public class Feature4455StepDefinations
     {
-        IWebDriver driver;
-
+     
         [Given(@"Logged into Mars Logo home")]
         public void GivenLoggedIntoMarsLogoHome()
         {
